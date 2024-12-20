@@ -1,55 +1,60 @@
 import { useState } from "react";
-import { ArrowPathIcon, PlusIcon } from "@heroicons/react/24/outline";
+import {
+  ArrowPathIcon,
+  PlusIcon,
+  MagnifyingGlassIcon,
+} from "@heroicons/react/24/outline";
+import DatabaseIcon from "./DatabaseIcon"; // Import the custom DatabaseIcon
 
 const repositories = [
   {
-    name: "design-system",
-    language: "React",
-    size: "7320 KB",
+    name: "Personal Portfolio",
     visibility: "Public",
+    language: "React",
+    size: "2024 KB",
     updatedAt: "1 day ago",
   },
   {
-    name: "codeant-ci-app",
-    language: "Javascript",
-    size: "5871 KB",
+    name: "E-Commerce App",
     visibility: "Private",
+    language: "Javascript",
+    size: "4550 KB",
     updatedAt: "2 days ago",
   },
   {
-    name: "analytics-dashboard",
-    language: "Python",
-    size: "4521 KB",
-    visibility: "Private",
-    updatedAt: "5 days ago",
-  },
-  {
-    name: "mobile-app",
-    language: "Swift",
-    size: "3096 KB",
+    name: "Blog Platform",
     visibility: "Public",
+    language: "Python",
+    size: "3512 KB",
     updatedAt: "3 days ago",
   },
   {
-    name: "e-commerce-platform",
-    language: "Java",
-    size: "6210 KB",
-    visibility: "Private",
-    updatedAt: "6 days ago",
-  },
-  {
-    name: "blog-website",
-    language: "HTML/CSS",
-    size: "1876 KB",
+    name: "Weather Dashboard",
     visibility: "Public",
-    updatedAt: "4 days ago",
+    language: "HTML/CSS",
+    size: "1023 KB",
+    updatedAt: "5 days ago",
   },
   {
-    name: "social-network",
-    language: "PHP",
-    size: "5432 KB",
+    name: "Landing Page",
+    visibility: "Public",
+    language: "Javascript",
+    size: "1056 KB",
+    updatedAt: "3 days ago",
+  },
+  {
+    name: "Chat Application",
     visibility: "Private",
+    language: "Java",
+    size: "4011 KB",
     updatedAt: "7 days ago",
+  },
+  {
+    name: "Crypto Tracker",
+    visibility: "Public",
+    language: "Swift",
+    size: "2355 KB",
+    updatedAt: "1 week ago",
   },
 ];
 
@@ -75,13 +80,20 @@ export default function RepositoryList() {
             {repositories.length} total repositories
           </p>
         </div>
-        <div className="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
+        <div className="mt-4 sm:ml-16 sm:mt-0 sm:flex sm:items-center">
           <button
             type="button"
-            className="block rounded-md bg-blue-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+            className="mr-4 block rounded-md bg-blue-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
           >
             <PlusIcon className="inline-block w-5 h-5 mr-2 -mt-1" />
             Add Repository
+          </button>
+          <button
+            type="button"
+            className="rounded bg-white px-2 py-1 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+          >
+            <ArrowPathIcon className="inline-block w-5 h-5 mr-2 -mt-1" />
+            Refresh All
           </button>
         </div>
       </div>
@@ -89,19 +101,18 @@ export default function RepositoryList() {
         <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
             <div className="mb-4 flex items-center justify-between">
-              <button
-                type="button"
-                className="rounded bg-white px-2 py-1 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-              >
-                <ArrowPathIcon className="inline-block w-5 h-5 mr-2 -mt-1" />
-                Refresh All
-              </button>
               <div className="relative rounded-md shadow-sm">
+                <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                  <MagnifyingGlassIcon
+                    className="h-5 w-5 text-gray-400"
+                    aria-hidden="true"
+                  />
+                </div>
                 <input
                   type="text"
                   name="search"
                   id="search"
-                  className="block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-0 py-1.5 pl-10 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
                   placeholder="Search Repositories"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
@@ -115,10 +126,10 @@ export default function RepositoryList() {
                     key={repo.name}
                     className="px-4 py-4 sm:px-6 hover:bg-gray-50"
                   >
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between font-semibold">
                       <div className="truncate">
                         <div className="flex items-center space-x-3">
-                          <h2 className="text-sm font-medium text-gray-900">
+                          <h2 className="text-md font-medium text-gray-900">
                             {repo.name}
                           </h2>
                           <span
@@ -132,8 +143,9 @@ export default function RepositoryList() {
                             {repo.visibility}
                           </span>
                         </div>
-                        <div className="mt-1 flex items-center space-x-2 text-xs text-gray-500">
+                        <div className="mt-1 flex items-center space-x-10 text-sm text-gray-500">
                           <span className="inline-flex items-center space-x-2">
+                            <span>{repo.language}</span>
                             <span
                               className={classNames(
                                 repo.language === "React"
@@ -148,15 +160,15 @@ export default function RepositoryList() {
                                   ? "bg-red-400"
                                   : repo.language === "HTML/CSS"
                                   ? "bg-purple-400"
-                                  : repo.language === "PHP"
-                                  ? "bg-indigo-400"
                                   : "bg-gray-400",
                                 "flex-shrink-0 w-2 h-2 rounded-full"
                               )}
                             />
-                            <span>{repo.language}</span>
                           </span>
-                          <span>{repo.size}</span>
+                          <span className="inline-flex items-center space-x-2">
+                            <DatabaseIcon className="h-4 w-4 text-gray-500" />
+                            <span>{repo.size}</span>
+                          </span>
                           <span>Updated {repo.updatedAt}</span>
                         </div>
                       </div>
