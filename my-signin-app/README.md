@@ -1,5 +1,8 @@
 # CodeAnt AI Sign-In Page
 
+![image](https://github.com/user-attachments/assets/b5c3e1d0-7bdc-4980-8090-116fec516007)
+
+
 This project implements a responsive and visually appealing sign-in page for CodeAnt AI. The page features a clean design, toggleable tabs for different modes, and social sign-in buttons, ensuring a seamless user experience across devices.
 
 ## Features
