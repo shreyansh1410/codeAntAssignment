@@ -5,39 +5,42 @@ export default function SignInPage() {
   const [activeTab, setActiveTab] = useState("saas");
 
   return (
-    <div className="min-h-screen flex flex-col md:flex-row bg-gray-50">
-      {/* Left Section - Hidden on mobile */}
-      <div className="hidden md:flex w-full md:w-1/2 p-8 flex-col justify-center relative">
+    <div className="min-h-screen flex flex-col justify-center md:flex-row bg-gray-50 font-sans">
+      {/* Left Side Content */}
+      <div className="hidden md:flex w-full md:w-1/2 p-8 flex-col justify-center relative bg-white">
         <div className="max-w-md mx-auto w-full">
           <div className="mb-16">
             <StatsCard />
           </div>
         </div>
-        {/* Placeholder SVG - Bottom Left */}
+
         <div className="absolute bottom-0 left-0 p-4">
           <img
             src="/placeholder.svg"
             alt="CodeAnt AI"
-            className="w-32 h-32 md:w-48 md:h-48 filter grayscale"
+            className="w-32 h-32 md:w-48 md:h-48 opacity-30"
           />
         </div>
       </div>
 
-      {/* Right Section */}
-      <div className="w-full md:w-1/2 min-h-screen md:min-h-0 bg-white px-6 py-12 md:p-8 flex flex-col">
-        <div className="max-w-md mx-auto w-full flex-1 flex flex-col">
-          <div className="flex-1">
+      {/* Sign-In Form */}
+      <div className="w-full md:w-1/2 flex items-center justify-center px-6 py-12 md:p-8">
+        <div className="max-w-md mx-auto w-full flex flex-col">
+          {/* White Background Section */}
+          <div className="bg-white p-6 rounded-lg shadow-md">
             <div className="text-center mb-8">
-              <div className="inline-block mb-4">
+              <div className="mb-4 flex items-center justify-center pt-4">
                 <img
                   src="/placeholder.svg"
                   alt="CodeAnt AI"
                   className="h-8 w-auto"
                 />
+                <span className="ml-2 text-lg font-semibold">CodeAnt AI</span>
               </div>
               <h2 className="text-2xl font-semibold">Welcome to CodeAnt AI</h2>
             </div>
 
+            {/* Tabs */}
             <div className="flex rounded-lg bg-gray-100 p-1 mb-8">
               <button
                 className={`flex-1 py-2.5 px-4 rounded-md text-sm font-medium transition-colors ${
@@ -61,6 +64,7 @@ export default function SignInPage() {
               </button>
             </div>
 
+            {/* Sign-In Buttons */}
             <div className="space-y-3">
               {activeTab === "saas" ? (
                 <>
@@ -91,18 +95,24 @@ export default function SignInPage() {
                     <img src="/key.svg" alt="" className="w-5 h-5 mr-3" />
                     Sign in with SSO
                   </button>
+                  <button className="w-full flex items-center justify-center px-4 py-2.5 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors">
+                    {/* <img src="" alt="" className="w-5 h-5 mr-3" /> */}
+                    <div className="w-5 h-5 mr-3"></div>
+                  </button>
+                  <button className="w-full flex items-center justify-center px-4 py-2.5 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors">
+                    {/* <img src="" alt="" className="w-5 h-5 mr-3" /> */}
+                    <div className="w-5 h-6 mr-3"></div>
+                  </button>
                 </>
               )}
             </div>
           </div>
 
-          <div className="mt-8">
-            <p className="text-center text-sm text-gray-600">
+          {/* Privacy Policy (Outside White Background) */}
+          <div className="mt-4 text-center">
+            <p className="text-sm text-gray-600">
               By signing up you agree to the{" "}
-              <a
-                href="#"
-                className="font-medium text-blue-600 hover:text-blue-500"
-              >
+              <a href="#" className="font-medium text-blue-600 hover:underline">
                 Privacy Policy
               </a>
               .

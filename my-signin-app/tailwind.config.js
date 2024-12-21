@@ -2,7 +2,20 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: [
+          '"DM Sans"',
+          '"Helvetica Neue"',
+          "-apple-system",
+          "BlinkMacSystemFont",
+          '"Segoe UI"',
+          "Roboto",
+          "Arial",
+          "sans-serif",
+        ],
+      },
+    },
   },
   plugins: [],
 };
