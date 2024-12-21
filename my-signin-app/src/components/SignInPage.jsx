@@ -6,7 +6,6 @@ export default function SignInPage() {
 
   return (
     <div className="min-h-screen flex flex-col justify-center md:flex-row bg-gray-50 font-sans">
-      {/* Left Side Content */}
       <div className="hidden md:flex w-full md:w-1/2 p-8 flex-col justify-center relative bg-white">
         <div className="max-w-md mx-auto w-full">
           <div className="mb-16">
@@ -23,7 +22,7 @@ export default function SignInPage() {
         </div>
       </div>
 
-      {/* Sign-In Form */}
+
       <div className="w-full md:w-1/2 flex items-center justify-center px-6 py-12 md:p-8">
         <div className="max-w-md mx-auto w-full flex flex-col">
           {/* White Background Section */}
@@ -40,7 +39,6 @@ export default function SignInPage() {
               <h2 className="text-2xl font-semibold">Welcome to CodeAnt AI</h2>
             </div>
 
-            {/* Tabs */}
             <div className="flex rounded-lg bg-gray-100 p-1 mb-8">
               <button
                 className={`flex-1 py-2.5 px-4 rounded-md text-sm font-medium transition-colors ${
@@ -64,7 +62,6 @@ export default function SignInPage() {
               </button>
             </div>
 
-            {/* Sign-In Buttons */}
             <div className="space-y-3">
               {activeTab === "saas" ? (
                 <>
@@ -108,7 +105,6 @@ export default function SignInPage() {
             </div>
           </div>
 
-          {/* Privacy Policy (Outside White Background) */}
           <div className="mt-4 text-center">
             <p className="text-sm text-gray-600">
               By signing up you agree to the{" "}
