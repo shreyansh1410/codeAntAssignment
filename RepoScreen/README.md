@@ -1,5 +1,8 @@
 # CodeAnt AI Repository Manager
 
+![image](https://github.com/user-attachments/assets/7a0df882-26a9-42ce-9fd3-723007ed617c)
+
+
 This project is a **Repository Management Dashboard** for CodeAnt AI, designed to provide an intuitive and responsive interface for managing repositories. Built using **React**, **Tailwind CSS**, and **Heroicons**, it offers a clean and modern user experience.
 
 ---
